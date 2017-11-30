@@ -15,6 +15,7 @@ to approximate a cart's location too.
 1. Create a Google Directory Service Account with "View" scope access.
 2. Delegate it API access in the Admin console (Security -> Advanced Settings)
 3. Copy the `client_secret.json` into the project directory
+4. Adjust `settings.py` to match your infrastructure
 
 #### Usage ####
 
