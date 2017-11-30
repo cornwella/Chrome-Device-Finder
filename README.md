@@ -10,6 +10,9 @@ to approximate a cart's location too.
 
 `pip install google-api-python-client google-auth`
 
+If you want to use AUTO_COPY, you'll need pyperclip too:
+`pip install pyperclip`
+
 #### Setup ####
 
 1. Create a Google Directory Service Account with "View" scope access.
@@ -23,7 +26,7 @@ to approximate a cart's location too.
 
 Use `AUTO_COPY` to copy the Meraki URL to the clipboard,  
 and `AUTO_OPEN` to open it in the system default web browser.  
-Using partial serials returns all matches.  
+Partial serials returns all matches.  
 
 *or*
 
