@@ -2,8 +2,8 @@
 
 A quick script to locate ChromeOS devices based on serial numbers in a Meraki network.
 
-It pulls the device MAC from Google Admin, then copies a Meraki device search URL to the clipboard, 
-which indicates the AP it last connected to (along with the time and date). It can be used with a sample group of serials
+It pulls the device MAC from Google Admin, then opens a Meraki Dashboard device search URL (or copies it to the clipboard), 
+which indicates the AP it last connected to (along with the time and date). It could be used with a sample group of serials
 to approximate a cart's location too.
 
 #### Requirements ####
