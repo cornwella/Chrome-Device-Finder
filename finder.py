@@ -1,10 +1,10 @@
 from apiclient import discovery
 from google.oauth2 import service_account
 from google.auth.transport.requests import AuthorizedSession
-from webbrowser import open
 from json import loads
 from csv import reader
 from sys import argv, modules
+import webbrowser
 
 import settings
 
@@ -65,7 +65,7 @@ def get_asset(serial_numbers):
                 if settings.AUTO_COPY and "pypercut" in modules:
                     copy(meraki_link)
                 if settings.AUTO_OPEN:
-                    open(meraki_link)
+                    webbrowser.open(meraki_link)
 
     result_count = len(mac_address_list)
 
@@ -90,7 +90,7 @@ finder.py -f [csv of serials]''')
     elif len(argv) > 2 and argv[1] == "-f":
         filename = argv[2]
 
-        with open(filename, 'rb') as f:
+        with open(filename, 'rb+') as f:
             reader = reader(f)
             serial_list = list(reader)[0]
 
