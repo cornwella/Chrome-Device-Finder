@@ -69,7 +69,7 @@ def get_asset(serial_numbers):
 
     result_count = len(mac_address_list)
 
-    if result_count >= settings.MAX_RESULTS:
+    if result_count >= settings.MAX_RESULTS and argv[1] == "-s":
         print("Found %s results (may be more, reached limit)" % result_count)
     else:
         print("Found %s results." % result_count)
