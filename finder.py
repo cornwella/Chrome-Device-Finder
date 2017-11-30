@@ -4,7 +4,7 @@ from google.auth.transport.requests import AuthorizedSession
 from webbrowser import open
 from json import loads
 from csv import reader
-from sys import argv
+from sys import argv, modules
 
 import settings
 
@@ -13,10 +13,8 @@ import settings
 if settings.AUTO_COPY:
     try:
         from pyperclip import copy
-        extras = True
     except ImportError:
         print("Install pyperclip to use AUTO_COPY")
-        extras = False
         pass
 
 # Initialize credentials for Google API auth
@@ -37,7 +35,7 @@ def get_asset(serial_numbers):
 
         request_id_url = "https://www.googleapis.com/admin/directory/v1/customer/" \
                          "my_customer/devices/chromeos?projection=full&query=id:" + \
-                         serial + "&orderBy=status&sortOrder=ascending&maxResults=10"
+                         serial + "&orderBy=status&sortOrder=ascending&maxResults=" + str(settings.MAX_RESULTS)
 
         response = authed_session.get(request_id_url)
 
@@ -63,14 +61,18 @@ def get_asset(serial_numbers):
 
             print("%s \t %s" % (mac[0], meraki_link))
 
-            if extras:
-                if meraki_link:
-                    if settings.AUTO_COPY:
-                        copy(meraki_link)
-                    if settings.AUTO_OPEN:
-                        open(meraki_link)
+            if meraki_link:
+                if settings.AUTO_COPY and "pypercut" in modules:
+                    copy(meraki_link)
+                if settings.AUTO_OPEN:
+                    open(meraki_link)
 
-    print("Found %s results." % (len(mac_address_list)))
+    result_count = len(mac_address_list)
+
+    if result_count >= settings.MAX_RESULTS:
+        print("Found %s results (may be more, reached limit)" % result_count)
+    else:
+        print("Found %s results." % result_count)
     return
 
 
