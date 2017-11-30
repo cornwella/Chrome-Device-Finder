@@ -16,6 +16,10 @@ MERAKI_URL = ''
 # Ex. "user@domain.com"
 ADMIN_USER = ''
 
+# Maximum results to return from the serial number query.
+# Keep in mind if you use AUTO_OPEN, these will each open a new tab!
+MAX_RESULTS = 5
+
 # AUTO_OPEN will open the received Meraki URLs in your browser.
 # AUTO_COPY will copy the received Meraki URL to your clipboard;
 # When processing multiple serials, use a clipboard manager like Ditto
