@@ -10,7 +10,7 @@ to approximate a cart's location too.
 
 `pip install google-api-python-client google-auth`
 
-If you want to use AUTO_COPY, you'll need pyperclip too:
+If you want to use AUTO_COPY, you'll need pyperclip too:  
 `pip install pyperclip`
 
 #### Setup ####
