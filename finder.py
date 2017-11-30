@@ -1,22 +1,23 @@
 from apiclient import discovery
 from google.oauth2 import service_account
 from google.auth.transport.requests import AuthorizedSession
+from webbrowser import open
 from json import loads
 from csv import reader
 from sys import argv
 
 import settings
 
-# These are the optional components for AUT_COPY and AUTO_OPEN.
-# They're not strictly required and can be turned off in settings.py.
-try:
-    from pyperclip import copy
-    from webbrowser import open
-    extras = True
-except ImportError:
-    print("Install pyperclip or webbrowser to use AUTO_COPY & AUTO_OPEN")
-    extras = False
-    pass
+# Optional component for AUTO_COPY.
+# It's off by default in settings.py.
+if settings.AUTO_COPY:
+    try:
+        from pyperclip import copy
+        extras = True
+    except ImportError:
+        print("Install pyperclip to use AUTO_COPY")
+        extras = False
+        pass
 
 # Initialize credentials for Google API auth
 credentials = service_account.Credentials.from_service_account_file(
