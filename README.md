@@ -34,8 +34,3 @@ Partial serials return all valid matches.
 `finder.py -f [file.csv]`
 
 The `csv` is one line of comma-separated serial numbers.  
-
-
-#### To-do ####
-
-* Rewrite output to make it less ugly
