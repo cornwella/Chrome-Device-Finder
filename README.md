@@ -15,10 +15,11 @@ If you want to use AUTO_COPY, you'll need pyperclip too:
 
 #### Setup ####
 
-1. Create a Google Directory Service Account with "View" scope access.
-2. Delegate it API access in the Admin console (Security -> Advanced Settings)
-3. Copy the `client_secret.json` into the project directory
-4. Adjust your preferences in `settings.py`
+* Create a Google Directory Service Account with "View" scope access in the API Dashboard (https://console.cloud.google.com/apis/dashboard)
+* Delegate it API access in the Admin console (Security -> Advanced Settings).  
+Give it the Scope `https://www.googleapis.com/auth/admin.directory.device.chromeos.readonly`
+* Copy the `client_secret.json` into the project directory
+* Adjust your preferences in `settings.py`
 
 #### Usage ####
 
