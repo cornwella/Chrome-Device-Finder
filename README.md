@@ -33,7 +33,6 @@ Partial serials return all valid matches.
 `finder.py -f [file.csv]`
 
 The `csv` is one line of comma-separated serial numbers.  
-`testing_serials.csv` is included as example.
 
 
 #### To-do ####
