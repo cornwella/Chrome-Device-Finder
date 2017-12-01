@@ -1,4 +1,4 @@
-from apiclient import discovery
+from googleapiclient import discovery
 from google.oauth2 import service_account
 from google.auth.transport.requests import AuthorizedSession
 from json import loads
