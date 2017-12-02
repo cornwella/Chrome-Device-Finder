@@ -41,15 +41,19 @@ def get_asset(serial_numbers):
 
         if response.status_code == 200:
             response_json = loads(response.content)
-            for device in response_json["chromeosdevices"]:
-                try:
-                    mac_address_list.append([device["serialNumber"], device["macAddress"]])
-                except Exception:
-                    mac_address_list.append("none")
-                    pass
+            if response_json.get("chromeosdevices"):
+                for device in response_json["chromeosdevices"]:
+                    try:
+                        mac_address_list.append([device["serialNumber"], device["macAddress"]])
+                    except Exception:
+                        mac_address_list.append("none")
+                        pass
+            else:
+                print("Received no valid Chrome device data from request. Check serial numbers.")
+                return
         else:
-            print("Something went wrong, return code:", response.status_code)
-            pass
+            print("Bad response, return code:", response.status_code)
+            return
 
     for mac in mac_address_list:
         if mac[1] != "none":
