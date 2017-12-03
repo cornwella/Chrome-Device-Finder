@@ -15,18 +15,19 @@ If you want to use AUTO_COPY, you'll need pyperclip too:
 
 #### Setup ####
 
-* Create a Google Directory Service Account with "View" scope access in the API Dashboard (https://console.cloud.google.com/apis/dashboard)
-* Delegate it API access in the Admin console (Security -> Advanced Settings).  
+* Create a Google Directory service account with "View" access in the API Dashboard (https://console.cloud.google.com/apis/dashboard)
+* Enable the "Admin SDK" API for your service account's project
+* Delegate your service account ID API access in the Admin console (Security -> Advanced Settings).  
 Give it the Scope `https://www.googleapis.com/auth/admin.directory.device.chromeos.readonly`
-* Copy the `client_secret.json` into the project directory
+* Copy the service account's `client_secret.json` into the project directory
 * Adjust your preferences in `settings.py`
 
 #### Usage ####
 
 `finder.py -s [serial]`
 
-Use `AUTO_COPY` to copy the Meraki URL to the clipboard,  
-and `AUTO_OPEN` to open it in the system default web browser.  
+In `settings.py`, enable `AUTO_COPY` to copy the Meraki URL to the clipboard,  
+or `AUTO_OPEN` to open it in the system default web browser (on by default).
 Partial serials return all valid matches.  
 
 *or*
