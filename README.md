@@ -6,11 +6,15 @@ A quick script to locate ChromeOS devices based on serial numbers.
 
 It pulls the device MAC from Google Admin, then opens a Meraki Dashboard device search URL (or copies it to the clipboard), which indicates the AP it last connected to (along with the time and date).  
 
-It could be used with a sample group of serials to approximate a cart's location too.
+It can be used with a sample group of serials to approximate a cart's location too.
+
+Here's a screenshot of it in action:
+
+![screenshot](https://i.imgur.com/NIJb3an.pngg)
 
 #### Requirements ####
 
-`pip install google-api-python-client google-auth google-auth-httplib2 requests`
+`pip install python-dateutil google-api-python-client google-auth google-auth-httplib2 requests`
 
 If you want to use AUTO_COPY, you'll need pyperclip too:  
 `pip install pyperclip`
