@@ -1,7 +1,5 @@
 ## Chrome Device Finder ##
 
-![halp](https://i.imgur.com/Aj8Ufdt.png)
-
 A quick script to locate ChromeOS devices based on serial numbers.
 
 It pulls the device MAC from Google Admin, then opens a Meraki Dashboard device search URL (or copies it to the clipboard), which indicates the AP it last connected to (along with the time and date).  
