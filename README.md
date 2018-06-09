@@ -14,7 +14,7 @@ Here's a screenshot of it in action:
 
 `pip install python-dateutil google-api-python-client google-auth google-auth-httplib2 requests`
 
-If you want to use AUTO_COPY, you'll need pyperclip too:  
+If you want to use AUTO_COPY for clipboard pasting, you'll need pyperclip too:
 `pip install pyperclip`
 
 #### Setup ####
@@ -28,8 +28,8 @@ If you want to use AUTO_COPY, you'll need pyperclip too:
 
 `finder.py -s [serial]`
 
-Use `AUTO_COPY` to copy the Meraki URL to the clipboard,  
-and `AUTO_OPEN` to open it in the system default web browser.  
+Enable `AUTO_COPY` to copy the Meraki URL to the clipboard,
+and `AUTO_OPEN` to open it in the system default web browser (probably more useful).
 Partial serials return all valid matches (given the limit in `settings.py`).  
 
 *or*
@@ -41,7 +41,3 @@ The `csv` is a list of serial numbers (one per line).
 
 There's also the option to use `finder.py -mf [mac_file.csv]`, which will simply generate and open 
 Meraki URLs from a list of MAC addresses.
-
-#### To-do ####
-
-* Rewrite output to make it less ugly
