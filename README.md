@@ -37,7 +37,6 @@ Partial serials return all valid matches (given the limit in `settings.py`).
 `finder.py -f [file.csv]`
 
 The `csv` is a list of serial numbers (one per line).  
-`testing_serials.csv` is included as example.
 
 There's also the option to use `finder.py -mf [mac_file.csv]`, which will simply generate and open 
-Meraki URLs from a list of MAC addresses.
+Meraki URLs from a list of already validated MAC addresses.
