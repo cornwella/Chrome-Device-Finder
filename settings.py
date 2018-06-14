@@ -9,10 +9,10 @@ SCOPES = ['https://www.googleapis.com/auth/admin.directory.device.chromeos.reado
 CLIENT_KEY = 'client_key.json'
 
 # Your Meraki Dashboard URL. Log in to see your unique string.
-MERAKI_URL = 'n114.meraki.com/Southgate-Wirele/n/9_RSHcYb'
+MERAKI_URL = ''
 
 # An administrative user in your G Suite environment (ties to your service account)
-ADMIN_USER = 'cornwella@sgate.k12.mi.us'
+ADMIN_USER = ''
 
 # Maximum results to return from the serial number query.
 # Keep in mind if you use AUTO_OPEN, these will each open a new tab!
